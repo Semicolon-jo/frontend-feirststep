@@ -1,4 +1,7 @@
+import Login from './Login';
+
 export const Header = (props) => {
+
   return (
     <header id='header'>
       <div className='intro'>
@@ -11,12 +14,13 @@ export const Header = (props) => {
                   <span></span>
                 </h1>
                 <p style={{fontWeight: "bold"}}>{props.data ? props.data.paragraph : 'Loading'}</p>
-                <a
+                {/* <a
                   href='#features'
                   className='btn btn-custom btn-lg page-scroll'
                 >
                   sign up
-                </a>{' '}
+                </a>{' '} */}
+                <Login />
               </div>
             </div>
           </div>
