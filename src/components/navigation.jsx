@@ -1,3 +1,5 @@
+import Logout from './Logout';
+import { Link } from "react-router-dom";
 export const Navigation = (props) => {
   return (
     <nav id='menu' className='navbar navbar-default navbar-fixed-top'>
@@ -59,10 +61,13 @@ export const Navigation = (props) => {
                 Contact
               </a>
             </li>
+            
             <li>
-              <a style={{ color: "#608CFD", fontWeight: "bold" ,}} href='#contact' className='page-scroll'>
-                login
-              </a>
+            {/* <Link to="/profile">Profile</Link>  */}
+              {/* <a style={{ color: "#608CFD", fontWeight: "bold" ,}} href='#contact' className='page-scroll'>
+               
+              </a> */}
+              <Logout/>
             </li>
           </ul>
         </div>
