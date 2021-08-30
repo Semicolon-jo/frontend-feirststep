@@ -353,10 +353,12 @@ header .intro-text {
 /* Portfolio Section */
 #portfolio {
   padding: 100px 0;
+
 }
 .portfolio-item {
   margin: 1px -15px 0 -14px;
   padding: 0;
+  
 }
 .portfolio-item .hover-bg {
   overflow: hidden;
