@@ -15,7 +15,7 @@ import Profile from './components/Profile';
 import Login from './components/Login';
 import { withAuth0 } from '@auth0/auth0-react';
 import { Link } from "react-router-dom";
-import Header2 from './components/Header2';
+import Main from './components/Main';
 import {
   BrowserRouter as Router,
   Switch,
@@ -57,8 +57,7 @@ const App = () => {
           
           <Route path='/profile'>
           <Navigation />
-            <Header2  />
-            <Profile />
+          <Main/>
           </Route>
         </Switch>
         {/* {isAuthenticated && <Redirect to='/profile' />} */}
