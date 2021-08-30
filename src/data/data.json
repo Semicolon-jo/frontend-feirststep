@@ -4,82 +4,82 @@
     "paragraph": "New Beginnings . Endless Possibilities . The Education You Want. The Attention You Deserve on one place ..."
   },
   "About": {
-    "paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "paragraph": "FIRST STEP is a unique resource for anyone interested in undergraduate education, science and technology, economic and ethnic diversity, student success, and other characteristics of the world's undergraduates and the colleges they attend.",
     "Why": [
-      "Lorem ipsum dolor",
-      "Tempor incididunt",
-      "Lorem ipsum dolor",
-      "Incididunt ut labore"
+      "Convenience",
+      "flexibility",
+      "reliability",
+      "credibility"
     ],
     "Why2": [
-      "Aliquip ex ea commodo",
-      "Lorem ipsum dolor",
-      "Exercitation ullamco",
-      "Lorem ipsum dolor"
+      "accessibility",
+      "Free",
+      "inclusivity",
+      "Globalism"
     ]
   },
   "Services": [
     {
-      "icon": "fa fa-youtube",
-      "name": "Lorem ipsum dolor",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at."
+      "icon": "fa fa-search",
+      "name": "Get Matched",
+      "text": "We offer a search, matching and search service in the widest network of universities and students"
     },
     {
-      "icon": "fa fa-plane",
-      "name": "Consectetur adipiscing",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at."
+      "icon": "fa fa-star",
+      "name": "Pin Your Favorite",
+      "text": "keep an eye on the college you are interested by pinning them to top of your list"
     },
     {
       "icon": "fa fa-cloud-download",
-      "name": "Lorem ipsum dolor",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at."
+      "name": "Compare",
+      "text": "See how your pinned college stack up to each other on the factor that matter to you most with compare view."
     },
     {
       "icon": "fa fa-language",
-      "name": "Consectetur adipiscing",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at."
+      "name": "SAVE",
+      "text": "With a few simple steps . you can save your progress and come back to your search later."
     },
     {
-      "icon": "fa fa-car",
-      "name": "Lorem ipsum dolor",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at."
+      "icon": "fa fa-plane",
+      "name": "ACCESS",
+      "text": "Access to universities and communicate with universities via e-mail and other means of communication."
     },
     {
       "icon": "fa fa-pie-chart",
-      "name": "Consectetur adipiscing",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at."
+      "name": "MAP IT",
+      "text": "want a bird's-eye view of your matching college? Add some geographic perspective to your result with the map future."
     }
   ],
   "Testimonials": [
     {
       "img": "img/testimonials/01.jpg",
-      "text": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.\"",
+      "text": "\"They are the best in the field and professionals in the work and a pleasure to deal with them.\"",
       "name": "Razan Al-Quran"
     },
     {
       "img": "img/testimonials/02.jpg",
-      "text": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.\"",
+      "text": "\"Very useful and easy to use site and it was a great experience for me, good job.\"",
       "name": "Yazan Alshekha"
     },
     {
       "img": "img/testimonials/03.jpg",
-      "text": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.\"",
+      "text": "\"I appreciate your beautiful work and effort and keep up the success keep going.\"",
       "name": "Abdalrahman Abualata"
     },
     {
       "img": "img/testimonials/04.jpg",
-      "text": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.\"",
+      "text": "\"Keep moving forward you are great and thank you for this great site,I am so proud that you were my students .\"",
       "name": "Shihab Eshtaiwi"
     },
     {
       "img": "img/testimonials/05.jpg",
-      "text": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.\"",
+      "text": "\"I was very happy and it was a very wonderful experience and I achieved the success that I wanted.\"",
       "name": "Trad Almelhem"
     },
     {
       "img": "img/testimonials/06.jpg",
-      "text": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.\"",
-      "name": "Shamikh Quraan"
+      "text": "\"You have always been the first choice for me and I would advise everyone to use this very special site.\"",
+      "name": "Boshra Jaber"
     }
   ],
   "Team": [
@@ -119,24 +119,24 @@
   },
   "Features": [
     {
-      "icon": "fa fa-comments-o",
-      "title": "Lorem ipsum",
-      "text": "Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque natoque etiam."
+      "icon": "fa fa-search",
+      "title": "Refine your search",
+      "text": "Select your search destination and choose the options that suit you."
     },
     {
-      "icon": "fa fa-bullhorn",
-      "title": "Lorem ipsum",
-      "text": "Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque natoque etiam."
+      "icon": "fa fa-list",
+      "title": "Build a list",
+      "text": "You can build a list of the options you chose and come back to it later."
     },
     {
       "icon": "fa fa-group",
-      "title": "Lorem ipsum",
-      "text": "Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque natoque etiam."
+      "title": "comparisons",
+      "text": "You can compare universities and specializations you want and specializations by region."
     },
     {
-      "icon": "fa fa-magic",
-      "title": "Lorem ipsum",
-      "text": "Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque natoque etiam."
+      "icon": "fa fa-save",
+      "title": "Save your session",
+      "text": "Save your own file and modify it at any time you want and customize it for you."
     }
   ]
 }

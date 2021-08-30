@@ -17,9 +17,11 @@ export const Navigation = (props) => {
             <span className='icon-bar'></span>{' '}
             <span className='icon-bar'></span>{' '}
           </button>
-          <a className='navbar-brand page-scroll' href='#page-top'>
+          <img src='img/logo.png' style={{width:'50px',height:'50px',float:'left' }} />
+         <a className='navbar-brand page-scroll' href='#page-top'>
+
             first step
-          </a>{' '}
+          </a>  {' '}
         </div>
         <div
           className='collapse navbar-collapse'
