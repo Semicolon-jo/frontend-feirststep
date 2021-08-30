@@ -2,7 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import { Auth0Provider } from "@auth0/auth0-react";
+import { Auth0Provider ,withAuth0} from "@auth0/auth0-react";
+
 import * as serviceWorker from './serviceWorker';
 
 
