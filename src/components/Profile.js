@@ -9,32 +9,31 @@ import axios from "axios";
 import Button from "react-bootstrap/Button";
 
 class Profile extends React.Component {
-  constructor(props){
+  constructor(props) {
     super(props);
-    this.state={
-      tt:{},
+    this.state = {
+      tt: {},
     }
   }
   //http://localhost:3001/Adduniversity&email=email  ,universityOb
   addUni = async (e) => {
     // e.preventDefault();
-    console.log(e,'form');
-    const {user}  = this.props.auth0;
+    console.log('form', e);
+    const { user } = this.props.auth0;
     // console.log(this.props.auth0.user.email);
-   
-
-    setTimeout((data)=>{
+    console.log('user info:',user);
+if(user){
+    setTimeout((data) => {
       let uniData = {
         email: user.email,
         universtyName: e.universtyName,
         universtyUrl: e.universtyUrl,
         country: e.country,
       };
-      console.log(uniData,'uniData');
-     axios.post(`http://localhost:3001/Adduniversity`, uniData);
-      }, 5000)
-
-    
+      console.log(uniData, 'uniData');
+      axios.post(`http://localhost:3001/Adduniversity`, uniData);
+    }, 5000)
+  }
 
     // let uniData = {
     //   // email: user.email,
@@ -42,9 +41,9 @@ class Profile extends React.Component {
     //   universtyUrl: this.props.UniversityData.universtyUrl,
     //   country: this.props.UniversityData.country,
     // };
-    
-    
+
   };
+
   componentDidUpdate() {
     // console.log(this.props.auth0.user,'update')
     // console.log(this.props.auth0.user.email, "update")
@@ -52,8 +51,8 @@ class Profile extends React.Component {
   render() {
     return (
       <>
-      {console.log(this.props.auth0.user,'sss')}
-      {  setTimeout(()=>{ console.log(this.props.auth0.user.email,'rrr') }, 5000) }
+        {/* {console.log(this.props.auth0.user, 'sss')} */}
+        {/* { setTimeout(() => { console.log(this.props.auth0.user.email, 'rrr') }, 5000)} */}
         {this.props.show && (
           <Card style={{ width: "18rem", display: "inline-block" }}>
             <Card.Img
@@ -81,14 +80,14 @@ class Profile extends React.Component {
         )}
 
         {this.props.UniversityData.map((item, key) => {
-          key = { key };
+          
           return (
-            <Card style={{ width: "18rem", display: "inline-block" }}>
+            <Card key = { key } style={{ width: "18rem", display: "inline-block" }}>
               <Card.Body>
                 <Card.Title> Country : {item.country}</Card.Title>
                 <Card.Text>University name : {item.universtyName}</Card.Text>
-                <Card.Text>Web Page : {item.universtyUrl}</Card.Text>
-                <Button onClick={()=> this.addUni(item) }>Add To My Fav</Button>
+                <Card.Text><a href={item.universtyUrl}>Web Page : {item.universtyUrl}</a></Card.Text>
+                <Button onClick={() => this.addUni(item)}>Add To My Fav</Button>
                 {/* <Button type='submit'>Add To My Fav</Button> */}
               </Card.Body>
             </Card>
@@ -96,7 +95,6 @@ class Profile extends React.Component {
           );
         })}
         <div>
-          <h1> Hello from Profile Component</h1>
           <div id="footer">
             <div className="container text-center">
               <p>
