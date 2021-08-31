@@ -5,13 +5,14 @@ function Login() {
   const {isAuthenticated, loginWithRedirect,} = useAuth0();
 
   return (
+
       <>
   
     <button className='btn btn-custom btn-lg page-scroll' onClick={() =>
         loginWithRedirect({
             redirectUri: "http://localhost:3000/profile",
         })
-      }>  <Link to="/profile">sign up</Link></button>
+      }>  <Link to="/profile"></Link>sign up</button>
     
     </>
   );

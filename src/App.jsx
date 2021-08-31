@@ -11,17 +11,18 @@ import { Contact } from "./components/contact";
 import JsonData from "./data/data.json";
 import SmoothScroll from "smooth-scroll";
 import "./App.css";
-import Profile from './components/Profile';
-import Login from './components/Login';
 import { withAuth0 } from '@auth0/auth0-react';
-import { Link } from "react-router-dom";
 import Main from './components/Main';
+import Favourit from "./components/Favourit";
+import Navigation2 from './components/Navigation2';
+import Navigation3 from './components/Navigation3';
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   Redirect,
 } from "react-router-dom";
+import Header3 from "./components/Header3";
 
 export const scroll = new SmoothScroll('a[href*="#"]', {
   speed: 1000,
@@ -56,12 +57,17 @@ const App = () => {
           </Route>
           
           <Route path='/profile'>
-          <Navigation />
+          <Navigation2 />
           <Main/>
           </Route>
-        </Switch>
-        {/* {isAuthenticated && <Redirect to='/profile' />} */}
 
+          <Route path='/fav'>
+          <Navigation3 />
+          <Header3 />
+         <Favourit />
+          </Route>
+        </Switch>
+      
       </Router>
 
     </div>
