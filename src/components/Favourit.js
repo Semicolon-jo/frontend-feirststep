@@ -52,20 +52,31 @@ class Favourit extends React.Component {
     render() {
         const posts = this.state.favData?.map((post, i) => (
             // <li key={i} className="list-group-item">{post.universtyName}</li>
-            <Card key = { i } style={{ width: "18rem", display: "inline-block" }}>
-            <Card.Body>
-              <Card.Title> Country : {post.country}</Card.Title>
-              <Card.Text>University name : {post.universtyName}</Card.Text>
-              <Card.Text><a href={post.universtyUrl}>Web Page : {post.universtyUrl}</a></Card.Text>
-              <Button onClick={() => this.deleteFromFav(post._id)}>Delete From Favourite</Button>
+            <Card key = { i }  style={{ width: "18rem", display: "block", margin: "10px" }}>
+            <Card.Body style={{ boxShadow:"0 8px 16px 0 rgba(0,0,0,0.2)" , borderRadius:" 5px", borderStyle: "groove", width: "800px", height: "122px" }}>
+              <Card.Title style={{ paddingLeft: "10px", paddingTop: "10px", fontSize: "15px" }}> Country : {post.country}</Card.Title>
+              <Card.Text style={{ paddingLeft: "10px", paddingTop: "10px", fontSize: "15px" }}>University name : {post.universtyName}</Card.Text>
+              <Card.Text style={{ paddingLeft: "10px", paddingTop: "10px", fontSize: "15px" }}><a href={post.universtyUrl}>visit website</a></Card.Text>
+              <Button style={{ position: "relative", left: "590px", bottom: "40px" }} onClick={() => this.deleteFromFav(post._id)}>Delete From Favourite</Button>
               {/* <Button type='submit'>Add To My Fav</Button> */}
             </Card.Body>
           </Card>
+        
           ));
         return (
             <>
 
                 <h1>{posts}</h1>
+                <div>
+          <div id="footer">
+            <div className="container text-center">
+              <p>
+                &copy; 2021 FIRSTSTEP{" "}
+              </p>
+            </div>
+          </div>
+        </div>
+
                 {/* <p>test: {this.state.favData[0].universtyName}</p> */}
                 {/* <button onClick={this.addFav}>Add fav</button> */}
             </>

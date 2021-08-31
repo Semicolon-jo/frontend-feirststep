@@ -13,15 +13,15 @@ class Profile extends React.Component {
     super(props);
     this.state = {
       tt: {},
-    };
+    }
   }
   //http://localhost:3001/Adduniversity&email=email  ,universityOb
   addUni = async (e) => {
     // e.preventDefault();
-    console.log("form", e);
+    console.log('form', e);
     const { user } = this.props.auth0;
     // console.log(this.props.auth0.user.email);
-    console.log("user info:", user);
+    console.log('user info:', user);
     if (user) {
       setTimeout((data) => {
         let uniData = {
@@ -30,9 +30,9 @@ class Profile extends React.Component {
           universtyUrl: e.universtyUrl,
           country: e.country,
         };
-        console.log(uniData, "uniData");
+        console.log(uniData, 'uniData');
         axios.post(`http://localhost:3001/Adduniversity`, uniData);
-      }, 5000);
+      }, 5000)
     }
 
     // let uniData = {
@@ -41,6 +41,7 @@ class Profile extends React.Component {
     //   universtyUrl: this.props.UniversityData.universtyUrl,
     //   country: this.props.UniversityData.country,
     // };
+
   };
 
   componentDidUpdate() {
@@ -50,59 +51,63 @@ class Profile extends React.Component {
   render() {
     return (
       <>
-   
-        {/* {console.log(this.props.auth0.user, 'sss')} */}
-        {/* { setTimeout(() => { console.log(this.props.auth0.user.email, 'rrr') }, 5000)} */}
-        {this.props.show && (
-          <Card style={{ width: "18rem", display: "inline-block" }}>
-            <Card.Img
-              variant="top"
-              src={this.props.countryData.flagUrl}
-              style={{ width: "200px" }}
-            />
-            <Card.Body>
-              <Card.Title>
-                {" "}
-                Country : {this.props.countryData.countryName}
-              </Card.Title>
-              <Card.Text>capital : {this.props.countryData.capital}</Card.Text>
-              <Card.Text>
-                language : {this.props.countryData.language}
-              </Card.Text>
-              <Card.Text>
-                time Zone : {this.props.countryData.timeZone}
-              </Card.Text>
-              <Card.Text>
-                currencies : {this.props.countryData.currencies}
-              </Card.Text>
-            </Card.Body>
-          </Card>
-        )}
+
 
         {this.props.UniversityData.map((item, key) => {
+
           return (
-            <Card key={key} style={{ width: "18rem", display: "inline-block" }}>
-              <Card.Body>
-                {/* <Card.Title> Country : {item.country}</Card.Title> */}
-                <Card.Text> {item.universtyName}</Card.Text>
-                <Card.Text>
-                  <a href={item.universtyUrl}>Visit Website </a>
-                </Card.Text>
-                <Button onClick={() => this.addUni(item)}>Add To My Fav</Button>
+            <Card key={key} style={{ width: "18rem", display: "block", margin: "10px" }}>
+              <Card.Body style={{ boxShadow:"0 8px 16px 0 rgba(0,0,0,0.2)" , borderRadius:" 5px", borderStyle: "groove", width: "650px", height: "122px" }}>
+                <Card.Text style={{ paddingLeft: "10px", paddingTop: "10px", fontSize: "28px" }} >{item.universtyName}</Card.Text>
+                <Card.Text style={{ paddingLeft: "10px", paddingTop: "10px", fontSize: "18px" }} ><a href={item.universtyUrl}>visit website </a></Card.Text>
+                <Button style={{ position: "relative", left: "461px", bottom: "40px" }} onClick={() => this.addUni(item)}>Add To My Fav</Button>
                 {/* <Button type='submit'>Add To My Fav</Button> */}
               </Card.Body>
             </Card>
             //()=>{this.props.updateCat(this.props.cat._id)}
           );
         })}
+        {/* {console.log(this.props.auth0.user, 'sss')} */}
+        {/* { setTimeout(() => { console.log(this.props.auth0.user.email, 'rrr') }, 5000)} */}
+        {this.props.show && (
+          <Card style={{ width: "50rem", position: "absolute", left: "1052px", bottom: "-466px" }}>
+            
+            <Card.Img
+              variant="top"
+              src={this.props.countryData.flagUrl}
+              style={{ width: "296px" }}
+            />
+            <Card.Title style={{ fontSize: "30px" }} >
+                {" "}
+                {this.props.countryData.countryName.toUpperCase()}
+              </Card.Title>
+            <Card.Body style={{ fontSize: "30px" }} >
+              
+              <Card.Text style={{ fontSize: "30px" }} >CAPITAL: {this.props.countryData.capital}</Card.Text>
+              <Card.Text style={{ fontSize: "30px" }} >
+                LANGUAGE: {this.props.countryData.language}
+              </Card.Text>
+              <Card.Text style={{ fontSize: "30px" }} >
+                TIME ZONE: {this.props.countryData.timeZone}
+              </Card.Text>
+              <Card.Text style={{ fontSize: "30px" }} >
+                CURRENCIES: {this.props.countryData.currencies}
+              </Card.Text>
+            </Card.Body>
+          </Card>
+        )}
         <div>
           <div id="footer">
             <div className="container text-center">
-              <p>&copy; 2021 FIRSTSTEP </p>
+              <p>
+                &copy; 2021 FIRSTSTEP{" "}
+              </p>
             </div>
           </div>
         </div>
+
       </>
+
     );
   }
 }
