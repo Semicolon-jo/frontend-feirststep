@@ -29,13 +29,13 @@ export const scroll = new SmoothScroll('a[href*="#"]', {
   speedAsDuration: true,
 });
 
-const App = () => {
+function App() {
   const [landingPageData, setLandingPageData] = useState({});
   useEffect(() => {
     setLandingPageData(JsonData);
   }, []);
   const { user, isAuthenticated } = withAuth0();
-
+  console.log('user in App:',user);
   return (
     <div>
 
@@ -55,19 +55,19 @@ const App = () => {
             <Contact data={landingPageData.Contact} />
 
           </Route>
-          
+
           <Route path='/profile'>
-          <Navigation2 />
-          <Main/>
+            <Navigation2 />
+            <Main />
           </Route>
 
           <Route path='/fav'>
-          <Navigation3 />
-          <Header3 />
-         <Favourit />
+            <Navigation3 />
+            <Header3 />
+            <Favourit />
           </Route>
         </Switch>
-      
+
       </Router>
 
     </div>
