@@ -19,7 +19,7 @@ class Header2 extends React.Component {
 
                       <Form.Group className="mb-3" >
                         <Form.Label >Country Name</Form.Label>
-                        <Form.Control type="text" placeholder="Jordan" name="city" />
+                        <Form.Control type="text" placeholder="Write Country Name" name="city" />
                       </Form.Group>
                       <Button variant="primary" type="submit">
                         Search

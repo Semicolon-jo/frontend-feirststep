@@ -13,27 +13,27 @@ class Profile extends React.Component {
     super(props);
     this.state = {
       tt: {},
-    }
+    };
   }
   //http://localhost:3001/Adduniversity&email=email  ,universityOb
   addUni = async (e) => {
     // e.preventDefault();
-    console.log('form', e);
+    console.log("form", e);
     const { user } = this.props.auth0;
     // console.log(this.props.auth0.user.email);
-    console.log('user info:',user);
-if(user){
-    setTimeout((data) => {
-      let uniData = {
-        email: user.email,
-        universtyName: e.universtyName,
-        universtyUrl: e.universtyUrl,
-        country: e.country,
-      };
-      console.log(uniData, 'uniData');
-      axios.post(`http://localhost:3001/Adduniversity`, uniData);
-    }, 5000)
-  }
+    console.log("user info:", user);
+    if (user) {
+      setTimeout((data) => {
+        let uniData = {
+          email: user.email,
+          universtyName: e.universtyName,
+          universtyUrl: e.universtyUrl,
+          country: e.country,
+        };
+        console.log(uniData, "uniData");
+        axios.post(`http://localhost:3001/Adduniversity`, uniData);
+      }, 5000);
+    }
 
     // let uniData = {
     //   // email: user.email,
@@ -41,7 +41,6 @@ if(user){
     //   universtyUrl: this.props.UniversityData.universtyUrl,
     //   country: this.props.UniversityData.country,
     // };
-
   };
 
   componentDidUpdate() {
@@ -51,6 +50,7 @@ if(user){
   render() {
     return (
       <>
+   
         {/* {console.log(this.props.auth0.user, 'sss')} */}
         {/* { setTimeout(() => { console.log(this.props.auth0.user.email, 'rrr') }, 5000)} */}
         {this.props.show && (
@@ -80,13 +80,14 @@ if(user){
         )}
 
         {this.props.UniversityData.map((item, key) => {
-          
           return (
-            <Card key = { key } style={{ width: "18rem", display: "inline-block" }}>
+            <Card key={key} style={{ width: "18rem", display: "inline-block" }}>
               <Card.Body>
-                <Card.Title> Country : {item.country}</Card.Title>
-                <Card.Text>University name : {item.universtyName}</Card.Text>
-                <Card.Text><a href={item.universtyUrl}>Web Page : {item.universtyUrl}</a></Card.Text>
+                {/* <Card.Title> Country : {item.country}</Card.Title> */}
+                <Card.Text> {item.universtyName}</Card.Text>
+                <Card.Text>
+                  <a href={item.universtyUrl}>Visit Website </a>
+                </Card.Text>
                 <Button onClick={() => this.addUni(item)}>Add To My Fav</Button>
                 {/* <Button type='submit'>Add To My Fav</Button> */}
               </Card.Body>
@@ -97,9 +98,7 @@ if(user){
         <div>
           <div id="footer">
             <div className="container text-center">
-              <p>
-                &copy; 2021 FIRSTSTEP{" "}
-              </p>
+              <p>&copy; 2021 FIRSTSTEP </p>
             </div>
           </div>
         </div>
