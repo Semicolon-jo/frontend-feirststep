@@ -20,7 +20,7 @@
   },
   "Services": [
     {
-      "icon": "fa fa-search",
+      "icon": "fa fa-star",
       "name": "Get Matched",
       "text": "We offer a search, matching and search service in the widest network of universities and students"
     },
@@ -131,12 +131,17 @@
     {
       "icon": "fa fa-group",
       "title": "comparisons",
-      "text": "You can compare universities and specializations you want and specializations by region."
+      "text": "You can compare universities and specializations what you want."
     },
     {
       "icon": "fa fa-save",
       "title": "Save your session",
       "text": "Save your own file and modify it at any time you want and customize it for you."
+    },
+    {
+      "icon": "fa fa-star",
+      "title": "Pin Your Favorite",
+      "text": "Search your favorite area and go! show the world your steps."
     }
   ]
 }
