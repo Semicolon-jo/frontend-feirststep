@@ -15,7 +15,7 @@ class Profile extends React.Component {
       tt: {},
     }
   }
-  //http://localhost:3001/Adduniversity&email=email  ,universityOb
+  //${process.env.REACT_APP_HEROKU}/Adduniversity&email=email  ,universityOb
   addUni = async (e) => {
     // e.preventDefault();
     console.log('form', e);
@@ -31,7 +31,7 @@ class Profile extends React.Component {
           country: e.country,
         };
         console.log(uniData, 'uniData');
-        axios.post(`http://localhost:3001/Adduniversity`, uniData);
+        axios.post(`${process.env.REACT_APP_HEROKU}/Adduniversity`, uniData);
       }, 5000)
     }
 

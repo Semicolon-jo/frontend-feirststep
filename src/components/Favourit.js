@@ -19,7 +19,7 @@ class Favourit extends React.Component {
     //------- used to render the favourit list on page Favourit and update the Data in note --------
     componentDidMount = async () => {
         this.getFav();
-        // http://localhost:3001/AddNote
+        // ${process.env.REACT_APP_HEROKU}/AddNote
         console.log('hello');
         const { user } = this.props.auth0;
         let noteInfo = {
@@ -28,7 +28,7 @@ class Favourit extends React.Component {
         };
         console.log('noteInfo ', noteInfo);
         //   console.log('note:',this.state.note);
-        let noteData = await axios.post(`http://localhost:3001/AddNote`, noteInfo);
+        let noteData = await axios.post(`${process.env.REACT_APP_HEROKU}/AddNote`, noteInfo);
         console.log(noteData.data[0].note);
         await this.setState({
             note: noteData.data[0].note
@@ -41,7 +41,7 @@ class Favourit extends React.Component {
             const { user } = this.props.auth0;
             if (user) {
                 //  setTimeout((data) => {
-                let url = `http://localhost:3001/faviorate?email=${user.email}`;
+                let url = `${process.env.REACT_APP_HEROKU}/faviorate?email=${user.email}`;
                 // console.log(user.email);
                 let favouriteData = await axios.get(url);
                 console.log("FavouriteData:", favouriteData.data);
@@ -64,7 +64,7 @@ class Favourit extends React.Component {
     deleteFromFav = async (universityId) => {
         const { user } = this.props.auth0;
         console.log('uni ID', universityId);
-        let FavouriteData = await axios.delete(`http://localhost:3001/delete/${universityId}?email=${user.email}`);
+        let FavouriteData = await axios.delete(`${process.env.REACT_APP_HEROKU}/delete/${universityId}?email=${user.email}`);
         await this.setState({
             FavData: FavouriteData.data
         })
@@ -89,7 +89,7 @@ class Favourit extends React.Component {
             email: user.email,
             note: newnote
         }
-        let noteData = await axios.put(`http://localhost:3001/updateNote`, updatedData);
+        let noteData = await axios.put(`${process.env.REACT_APP_HEROKU}/updateNote`, updatedData);
         console.log('noteData', noteData.data[0].note);
         await this.setState({
             note: noteData.data[0].note,
