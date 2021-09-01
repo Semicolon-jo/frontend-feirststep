@@ -20,7 +20,7 @@
   },
   "Services": [
     {
-      "icon": "fa fa-search",
+      "icon": "fa fa-star",
       "name": "Get Matched",
       "text": "We offer a search, matching and search service in the widest network of universities and students"
     },
