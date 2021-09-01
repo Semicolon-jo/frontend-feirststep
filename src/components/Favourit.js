@@ -122,15 +122,15 @@ class Favourit extends React.Component {
                         <Card.Body style={{ boxShadow: "0 8px 16px 0 rgba(0,0,0,0.2)", borderRadius: " 5px", borderStyle: "groove", width: "800px", height: "122px" }}>
                             <Card.Title style={{ paddingLeft: "10px", paddingTop: "10px", fontSize: "15px" }}> My Notes</Card.Title>
                             <Card.Text style={{ paddingLeft: "10px", paddingTop: "10px", fontSize: "15px" }}> {this.state.note}</Card.Text>
-                            <Button style={{ position: "relative", left: "655px", bottom: "40px" , width: '69px', }} onClick={this.UpdateNote}>Edit  </Button>
+                            <Button style={{ position: "relative", left: "658px", bottom: "-6px" , width: '69px', }} onClick={this.UpdateNote}>Edit  </Button>
 
                         </Card.Body>
                     </Card>
                     {this.state.display &&
                         <form style={{ position: 'relative' , left: '10%',  }} onSubmit={this.updatenoteHandler}>
                             <input autocomplete="off"   placeholder=" update your note"  style={{ height : "16rem",  width: "64rem"  , position: 'relative' ,
-                              right: '102px' , margin: "10px"  }} type="text" name="notetxt" />
-                            <Button  style={{ position  : "relative", left : "-100px" ,}} type="submit">Update </Button>
+                              right: '136px' , margin: "10px"  }} type="text" name="notetxt" />
+                            <Button  style={{ position  : "relative", left : "-129px" ,}} type="submit">Update </Button>
                         </form>
                     }
                 </div>
