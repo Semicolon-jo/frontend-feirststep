@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
@@ -97,39 +98,51 @@ class Favourit extends React.Component {
     }
 
 
-
     render() {
         const posts = this.state.favData?.map((post, i) => (
             // <li key={i} className="list-group-item">{post.universtyName}</li>
-            <Card key = { i }  style={{ width: "18rem", display: "block", margin: "10px" }}>
-            <Card.Body style={{ boxShadow:"0 8px 16px 0 rgba(0,0,0,0.2)" , borderRadius:" 5px", borderStyle: "groove", width: "800px", height: "122px" }}>
-              <Card.Title style={{ paddingLeft: "10px", paddingTop: "10px", fontSize: "15px" }}> Country : {post.country}</Card.Title>
-              <Card.Text style={{ paddingLeft: "10px", paddingTop: "10px", fontSize: "15px" }}>University name : {post.universtyName}</Card.Text>
-              <Card.Text style={{ paddingLeft: "10px", paddingTop: "10px", fontSize: "15px" }}><a href={post.universtyUrl}>visit website</a></Card.Text>
-              <Button style={{ position: "relative", left: "657px", bottom: "43px",backgroundColor:"#FF4949" }} onClick={() => this.deleteFromFav(post._id)}>Delete</Button>
-              {/* <Button type='submit'>Add To My Fav</Button> */}
-            </Card.Body>
-          </Card>
-        
-          ));
+            <Card key={i} style={{ width: "18rem", display: "block", margin: "10px" }}>
+                <Card.Body style={{ boxShadow: "0 8px 16px 0 rgba(0,0,0,0.2)", borderRadius: " 5px", borderStyle: "groove", width: "800px", height: "122px" }}>
+                    <Card.Title style={{ paddingLeft: "10px", paddingTop: "10px", fontSize: "15px" }}> Country : {post.country}</Card.Title>
+                    <Card.Text style={{ paddingLeft: "10px", paddingTop: "10px", fontSize: "15px" }}>University name : {post.universtyName}</Card.Text>
+                    <Card.Text style={{ paddingLeft: "10px", paddingTop: "10px", fontSize: "15px" }}><a href={post.universtyUrl}>visit website</a></Card.Text>
+                    <Button style={{ position: "relative", left: "657px", bottom: "43px", backgroundColor: "#FF4949" }} onClick={() => this.deleteFromFav(post._id)}>Delete</Button>
+                    {/* <Button type='submit'>Add To My Fav</Button> */}
+                </Card.Body>
+            </Card>
+
+        ));
 
         return (
             <>
 
                 <h1>{posts}</h1>
                 <div>
+                    <Card style={{ width: "18rem", display: "block", margin: "10px" }}>
+                        <Card.Body style={{ boxShadow: "0 8px 16px 0 rgba(0,0,0,0.2)", borderRadius: " 5px", borderStyle: "groove", width: "800px", height: "122px" }}>
+                            <Card.Title style={{ paddingLeft: "10px", paddingTop: "10px", fontSize: "15px" }}> My Notes</Card.Title>
+                            <Card.Text style={{ paddingLeft: "10px", paddingTop: "10px", fontSize: "15px" }}> {this.state.note}</Card.Text>
+                            <Button style={{ position: "relative", left: "590px", bottom: "40px" }} onClick={this.UpdateNote}>Edit My Note</Button>
 
-          <div id="footer1">
-            <div className="container text-center">
-              <p>
-                &copy; 2021 FIRSTSTEP{" "}
-              </p>
-            </div>
-          </div>
-        </div>
-
-                {/* <p>test: {this.state.favData[0].universtyName}</p> */}
-                {/* <button onClick={this.addFav}>Add fav</button> */}
+                        </Card.Body>
+                    </Card>
+                    {this.state.display &&
+                        <form onSubmit={this.updatenoteHandler}>
+                            <label>update note</label>
+                            <input type="text" name="notetxt" />
+                            <Button type="submit">Update </Button>
+                        </form>
+                    }
+                </div>
+                <div>
+                    <div id="footer1">
+                        <div className="container text-center">
+                            <p>
+                                &copy; 2021 FIRSTSTEP{" "}
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </>
         )
     }
