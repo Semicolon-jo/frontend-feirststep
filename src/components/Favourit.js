@@ -3,22 +3,39 @@ import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import { withAuth0 } from "@auth0/auth0-react";
 const axios = require('axios');
+
 class Favourit extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             favData: [],
-            note:'my note go her',
-            display:false
+            note: '',
+            display: false
         }
 
     }
 
-    componentDidMount = () => {
-        this.addFav();
-
+    //------- used to render the favourit list on page Favourit and update the Data in note --------
+    componentDidMount = async () => {
+        this.getFav();
+        // http://localhost:3001/AddNote
+        console.log('hello');
+        const { user } = this.props.auth0;
+        let noteInfo = {
+            email: user.email,
+            note: this.state.note
+        };
+        console.log('noteInfo ', noteInfo);
+        //   console.log('note:',this.state.note);
+        let noteData = await axios.post(`http://localhost:3001/AddNote`, noteInfo);
+        console.log(noteData.data[0].note);
+        await this.setState({
+            note: noteData.data[0].note
+        });
     }
-    addFav = async () => {
+
+    //------ function to get favourite data to the Favourit page ---------------------
+    getFav = async () => {
         try {
             const { user } = this.props.auth0;
             if (user) {
@@ -39,8 +56,10 @@ class Favourit extends React.Component {
             console.log(error);
         }
     }
-    // ${process.env.REACT_APP_SERVER}/deleteBook/${bookID}?email=${user.email}
-    // http://localhost:3000//deleteBook/${universityId}?email=${email}
+
+
+    // http://localhost:3000/deleteBook/${universityId}?email=${email}
+    // ------- To delet data from Favourit page -----------
     deleteFromFav = async (universityId) => {
         const { user } = this.props.auth0;
         console.log('uni ID', universityId);
@@ -48,25 +67,34 @@ class Favourit extends React.Component {
         await this.setState({
             FavData: FavouriteData.data
         })
-        this.addFav();
+        this.getFav();
     }
-    // http://localhost:3001/AddNote?email=.....@
-   UpdateNote = async (noteInf) => { 
-    await this.setState({
-      display: true,
-      note :noteInf,
-    });
-    
-  }
-  //  '/ubdateBook/:bookID'
-  updatenoteHandler = async (e) => {
-      e.preventDefault();
-let newnote = e.target.notetxt.value
-    this.setState({
-      note: newnote,
-      display: false,
-    })
-  }
+
+
+    //---------- to show the form first and edit on txt ------------------
+
+    UpdateNote = async (e) => {
+        await this.setState({
+            display: true,
+        });
+
+    }
+    //  '/ubdateBook/:bookID'
+    updatenoteHandler = async (e) => {
+        e.preventDefault();
+        const { user } = this.props.auth0;
+        let newnote = e.target.notetxt.value
+        let updatedData = {
+            email: user.email,
+            note: newnote
+        }
+        let noteData = await axios.put(`http://localhost:3001/updateNote`, updatedData);
+        console.log('noteData', noteData.data[0].note);
+        await this.setState({
+            note: noteData.data[0].note,
+            display: false,
+        })
+    }
 
 
 
@@ -82,31 +110,29 @@ let newnote = e.target.notetxt.value
                     {/* <Button type='submit'>Add To My Fav</Button> */}
                 </Card.Body>
             </Card>
-        
-          ));
+
+        ));
         return (
             <>
 
                 <h1>{posts}</h1>
                 <div>
-                <Card style={{ width: "18rem", display: "block", margin: "10px" }}>
-                <Card.Body style={{ boxShadow: "0 8px 16px 0 rgba(0,0,0,0.2)", borderRadius: " 5px", borderStyle: "groove", width: "800px", height: "122px" }}>
-                <Card.Title style={{ paddingLeft: "10px", paddingTop: "10px", fontSize: "15px" }}> My Notes</Card.Title>
-                    <Card.Text style={{ paddingLeft: "10px", paddingTop: "10px", fontSize: "15px" }}> {this.state.note}</Card.Text>
+                    <Card style={{ width: "18rem", display: "block", margin: "10px" }}>
+                        <Card.Body style={{ boxShadow: "0 8px 16px 0 rgba(0,0,0,0.2)", borderRadius: " 5px", borderStyle: "groove", width: "800px", height: "122px" }}>
+                            <Card.Title style={{ paddingLeft: "10px", paddingTop: "10px", fontSize: "15px" }}> My Notes</Card.Title>
+                            <Card.Text style={{ paddingLeft: "10px", paddingTop: "10px", fontSize: "15px" }}> {this.state.note}</Card.Text>
+                            <Button style={{ position: "relative", left: "590px", bottom: "40px" }} onClick={this.UpdateNote}>Edit My Note</Button>
 
-                    <Button style={{ position: "relative", left: "590px", bottom: "40px" }} onClick={() => this.UpdateNote(this.state.note)}>update My note</Button>
-
-                </Card.Body>
-            </Card>
-            {this.state.display &&
-            <form onSubmit={this.updatenoteHandler}>
-                <label>update note</label>
-                <input type ="text" name ="notetxt"/>
-                <Button type="submit">update </Button>
-                {/* <button type="submit">update </button> */}
-            </form>
-    }
-            </div>
+                        </Card.Body>
+                    </Card>
+                    {this.state.display &&
+                        <form onSubmit={this.updatenoteHandler}>
+                            <label>update note</label>
+                            <input type="text" name="notetxt" />
+                            <Button type="submit">Update </Button>
+                        </form>
+                    }
+                </div>
                 <div>
                     <div id="footer">
                         <div className="container text-center">
@@ -116,9 +142,6 @@ let newnote = e.target.notetxt.value
                         </div>
                     </div>
                 </div>
-
-                {/* <p>test: {this.state.favData[0].universtyName}</p> */}
-                {/* <button onClick={this.addFav}>Add fav</button> */}
             </>
         )
     }
