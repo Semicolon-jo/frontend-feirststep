@@ -1,7 +1,13 @@
 import Logout from './Logout';
 import { Link } from "react-router-dom";
+import { useAuth0 } from '@auth0/auth0-react';
 
 export const Navigation3 = (props) => {
+    const {
+        user,
+        isAuthenticated,
+        
+      } = useAuth0();
     return (
         <nav id='menu' className='navbar navbar-default navbar-fixed-top'>
             <div className='container'>
@@ -48,6 +54,10 @@ export const Navigation3 = (props) => {
               </a> */}
                             <Logout />
                         </li>
+                        <li>
+                            <img src={user.picture} style={{borderRadius:'50%', width:'55px', height:'55px',}}/>
+                        </li>
+
                     </ul>
                 </div>
             </div>
