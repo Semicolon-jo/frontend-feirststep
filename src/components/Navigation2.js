@@ -1,6 +1,13 @@
 import Logout from './Logout';
 import { Link } from "react-router-dom";
-export const Navigation = (props) => {
+import { useAuth0 } from '@auth0/auth0-react';
+export const Navigation2 = (props) => {
+    const {
+        user,
+        isAuthenticated,
+        
+      } = useAuth0();
+  
   return (
     <nav id='menu' className='navbar navbar-default navbar-fixed-top'>
       <div className='container'>
@@ -28,21 +35,21 @@ export const Navigation = (props) => {
           id='bs-example-navbar-collapse-1'
         >
           <ul className='nav navbar-nav navbar-right'>
-            <li>
+            {/* <li>
               <a href='#features' className='page-scroll'>
                 Features
               </a>
-            </li>
-            <li>
+            </li> */}
+            {/* <li>
               <a href='#about' className='page-scroll'>
                 About
               </a>
-            </li>
-            <li>
+            </li> */}
+            {/* <li>
               <a href='#services' className='page-scroll'>
                 Services
               </a>
-            </li>
+            </li> */}
             {/* <li>
               <a href='#portfolio' className='page-scroll'>
               our partners
@@ -53,15 +60,15 @@ export const Navigation = (props) => {
                 feedback
               </a>
             </li> */}
+           {/*   <li>
+             <Link to="/profile" className='page-scroll'>
+                Profile
+              </Link>
+            </li> */}
             <li>
-              <a href='#team' className='page-scroll'>
-                Team
-              </a>
-            </li>
-            <li>
-              <a href='#contact' className='page-scroll'>
-                Contact
-              </a>
+              <Link to="/fav" className='page-scroll'>
+                My Favourit
+              </Link>
             </li>
             
             <li>
@@ -71,9 +78,14 @@ export const Navigation = (props) => {
               </a> */}
               <Logout/>
             </li>
+          { user && <li>
+                          <img src={user.picture} style={{borderRadius:'50%', width:'55px', height:'55px',}}/>
+                        </li>}
           </ul>
         </div>
       </div>
     </nav>
   )
 }
+
+export default Navigation2;

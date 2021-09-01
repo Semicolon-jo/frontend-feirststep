@@ -4,9 +4,8 @@ export const Team = (props) => {
       <div className='container'>
         <div className='col-md-8 col-md-offset-2 section-title'>
           <h2>Meet the Team</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit duis sed
-            dapibus leonec.
+          <p style={{fontWeight:"bold"}} >
+          ALONE WE CAN DO SO LITTLE TOGETHER WE CAN DO SO MUCH
           </p>
         </div>
         <div id='row'>
