@@ -18,7 +18,7 @@ class Header2 extends React.Component {
                     <Form style={{}} onSubmit={this.props.getUniversity}>
 
                       <Form.Group className="mb-3" >
-                        <Form.Label style={{fontSize: "30px" , color:"#FFFFFF" , padding:"2%",position: "relative", right: "15px"}} >Country Name</Form.Label>
+                        <Form.Label style={{fontSize: "30px" , color:"#FFFFFF" , padding:"2%",position: "relative", right: "15px"}} ></Form.Label>
                       
                         <Form.Control style={{width:"550px", padding:"2%"}} type="text" placeholder="Put your steps here" name="city" />
                       </Form.Group>

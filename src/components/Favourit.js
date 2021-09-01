@@ -57,7 +57,7 @@ class Favourit extends React.Component {
               <Card.Title style={{ paddingLeft: "10px", paddingTop: "10px", fontSize: "15px" }}> Country : {post.country}</Card.Title>
               <Card.Text style={{ paddingLeft: "10px", paddingTop: "10px", fontSize: "15px" }}>University name : {post.universtyName}</Card.Text>
               <Card.Text style={{ paddingLeft: "10px", paddingTop: "10px", fontSize: "15px" }}><a href={post.universtyUrl}>visit website</a></Card.Text>
-              <Button style={{ position: "relative", left: "590px", bottom: "40px" }} onClick={() => this.deleteFromFav(post._id)}>Delete From Favourite</Button>
+              <Button style={{ position: "relative", left: "657px", bottom: "43px",backgroundColor:"#FF4949" }} onClick={() => this.deleteFromFav(post._id)}>Delete</Button>
               {/* <Button type='submit'>Add To My Fav</Button> */}
             </Card.Body>
           </Card>
@@ -68,7 +68,7 @@ class Favourit extends React.Component {
 
                 <h1>{posts}</h1>
                 <div>
-          <div id="footer">
+          <div id="footer1">
             <div className="container text-center">
               <p>
                 &copy; 2021 FIRSTSTEP{" "}

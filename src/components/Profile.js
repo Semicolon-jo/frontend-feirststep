@@ -58,7 +58,7 @@ class Profile extends React.Component {
           return (
             <Card key={key} style={{ width: "18rem", display: "block", margin: "10px" }}>
               <Card.Body style={{ boxShadow:"0 8px 16px 0 rgba(0,0,0,0.2)" , borderRadius:" 5px", borderStyle: "groove", width: "650px", height: "122px" }}>
-                <Card.Text style={{ paddingLeft: "10px", paddingTop: "10px", fontSize: "28px" }} >{item.universtyName}</Card.Text>
+                <Card.Text style={{ paddingLeft: "10px", paddingTop: "10px", fontSize: "18px" }} >{item.universtyName}</Card.Text>
                 <Card.Text style={{ paddingLeft: "10px", paddingTop: "10px", fontSize: "18px" }} ><a href={item.universtyUrl}>visit website </a></Card.Text>
                 <Button style={{ position: "relative", left: "461px", bottom: "40px" }} onClick={() => this.addUni(item)}>Add To My Fav</Button>
                 {/* <Button type='submit'>Add To My Fav</Button> */}
@@ -70,7 +70,7 @@ class Profile extends React.Component {
         {/* {console.log(this.props.auth0.user, 'sss')} */}
         {/* { setTimeout(() => { console.log(this.props.auth0.user.email, 'rrr') }, 5000)} */}
         {this.props.show && (
-          <Card style={{ width: "50rem", position: "absolute", left: "1052px", bottom: "-466px" }}>
+          <Card style={{ width: "50rem", position: "absolute", left: "1052px", bottom: "-206px" }}>
             
             <Card.Img
               variant="top"
@@ -97,7 +97,7 @@ class Profile extends React.Component {
           </Card>
         )}
         <div>
-          <div id="footer">
+          <div id="footer2">
             <div className="container text-center">
               <p>
                 &copy; 2021 FIRSTSTEP{" "}

@@ -4,8 +4,8 @@ export const Team = (props) => {
       <div className='container'>
         <div className='col-md-8 col-md-offset-2 section-title'>
           <h2>Meet the Team</h2>
-          <p>
-          Alone we can do so little together we can do so much
+          <p style={{fontWeight:"bold"}} >
+          ALONE WE CAN DO SO LITTLE TOGETHER WE CAN DO SO MUCH
           </p>
         </div>
         <div id='row'>
