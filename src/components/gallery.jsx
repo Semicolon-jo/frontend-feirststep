@@ -5,7 +5,7 @@ export const Gallery = (props) => {
         <div className='university'>
           <h2>OUR PARTNERS</h2>
           <p>
-          We are proud to announce our partnership, and our reliability with them.
+          We are proud to announce our partnership and our reliability with them.
           </p>
         </div>
         <div className='row'>

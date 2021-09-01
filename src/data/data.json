@@ -86,32 +86,32 @@
     {
       "img": "img/team/01.jpg",
       "name": "Areej Elayyan",
-      "job": "Senior"
+      "job": ""
     },
     {
       "img": "img/team/02.jpg",
       "name": "Dima Zeklam",
-      "job": "Senior"
+      "job": ""
     },
     {
       "img": "img/team/04.jpg",
       "name": "Saddam Maratouq",
-      "job": "Senior"
+      "job": ""
     },
     {
       "img": "img/team/05.jpg",
       "name": "Mohammed Mosleh",
-      "job": "Senior"
+      "job": ""
     },
     {
       "img": "img/team/06.jpg",
       "name": "Abdallah Hamoury",
-      "job": "Senior"
+      "job": ""
     }
   ],
   "Contact": {
-    "address": "4321 JORDAN St, AMMAN ,  SM 12345 ",
-    "phone": "+962 079 000 0000",
+    "address": "4321 JORDAN St AMMAN ,  SM 12345 ",
+    "phone": "+962 079 999 7799",
     "email": "info@firststep.com",
     "facebook": "fb.com",
     "twitter": "twitter.com",
