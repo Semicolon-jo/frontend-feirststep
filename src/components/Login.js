@@ -10,7 +10,7 @@ function Login() {
   
     <button className='btn btn-custom btn-lg page-scroll' onClick={() =>
         loginWithRedirect({
-            redirectUri: "http://localhost:3000/profile",
+            redirectUri: "https://elatedboyd4c87e0.netlify.app/profile",
         })
       }>  <Link to="/profile"></Link>sign up</button>
     
