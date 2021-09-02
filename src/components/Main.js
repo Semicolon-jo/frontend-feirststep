@@ -17,7 +17,7 @@ class Main extends React.Component {
     event.preventDefault();
     let country = event.target.city.value;
     console.log(country);
-    let unvirsityURL = `http://localhost:3001/search?country=${country}`;
+    let unvirsityURL = `${process.env.REACT_APP_HEROKU}/search?country=${country}`;
     let Data = await axios.get(unvirsityURL);
 
     this.setState({
